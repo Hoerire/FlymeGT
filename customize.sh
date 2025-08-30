@@ -9,7 +9,7 @@ id=Flyme_GT
 name="电池信息展示&优化温控限制"
 version=V1.0.0
 versionCode=1
-author=Kari
+author=Hoerire
 description="Flyme_GT"
 
 # 生成module.prop
