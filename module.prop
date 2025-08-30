@@ -1,6 +1,6 @@
 id=Flyme_GT
-name=电池信息展示&优化温控限制
+name=电池信息展示&优化温控限制name=电池信息展示与优化温控限制
 version=1.0.0
 versionCode=1
-author=Kari
-description=点小三角执行刷新电池信息
+author=Hoerire
+description=点小三角执行刷新电池信息description=点击小三角执行刷新电池信息
