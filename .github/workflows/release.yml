@@ -1,0 +1,24 @@
+name: Release with Custom Assets
+on:
+  release:
+    types: [created]  # 当创建 Release 时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3  # 拉取仓库代码
+      # （此处可添加编译/打包项目的步骤，比如构建模块）
+      - name: Package with custom name
+        run: |
+          # 获取 Release 版本号（如 v1.0.0）
+          VERSION=${{ github.event.release.tag_name }}
+          # 假设打包后生成 dist 目录，压缩并重命名为含版本号的文件
+          zip -r Flyme-GT_${VERSION}_Module.zip dist/
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          # 上传自定义命名的文件
+          files: Flyme-GT_${{ github.event.release.tag_name }}_Module.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 自动生成的 token，用于授权
